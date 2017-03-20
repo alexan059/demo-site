@@ -12,6 +12,7 @@
 
   &__b-margin-until-medium {
     margin-bottom: 1em;
+
   }
 
   @mixin atMedium {
