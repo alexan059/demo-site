@@ -17,7 +17,7 @@ class StickyHeader {
     }
 
     refreshWaypoints() {
-        this.lazyImages.load(function() {
+        this.lazyImages.on('load',function() {
             Waypoint.refreshAll();
         });
     }
@@ -50,7 +50,7 @@ class StickyHeader {
             new Waypoint({
                 element: currentPageSection,
                 handler: function(direction) {
-                    if (direction == "down") {
+                    if (direction === "down") {
                         var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
                         that.headerLinks.removeClass("is-current-link");
                         $(matchingHeaderLink).addClass("is-current-link")
@@ -62,7 +62,7 @@ class StickyHeader {
             new Waypoint({
                 element: currentPageSection,
                 handler: function(direction) {
-                    if (direction == "up") {
+                    if (direction === "up") {
                         var matchingHeaderLink = currentPageSection.getAttribute("data-matching-link");
                         that.headerLinks.removeClass("is-current-link");
                         $(matchingHeaderLink).addClass("is-current-link")
